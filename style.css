@@ -1,0 +1,171 @@
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+:root {
+  --bg: #f5f7fb;
+  --text: #1f2937;
+  --card: #ffffff;
+  --primary: #4f46e5;
+  --done: #22c55e;
+}
+
+body.dark {
+  --bg: #0f172a;
+  --text: #e5e7eb;
+  --card: #1e293b;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ===== HEADER ===== */
+header {
+  background: var(--card);
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.header-btns button {
+  font-size: 18px;
+  border: none;
+  background: #eef2ff;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.header-btns button:hover {
+  background: #e0e7ff;
+}
+
+/* ===== PROGRESS ===== */
+.progress-box {
+  margin: 20px;
+}
+
+#progressText {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.progress-bar {
+  height: 14px;
+  background: #e5e7eb;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+#progressFill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #22c55e, #4f46e5);
+  transition: width 0.4s ease;
+}
+
+/* ===== CALENDAR ===== */
+.calendar {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  gap: 14px;
+}
+
+.day {
+  background: var(--card);
+  padding: 14px 0;
+  border-radius: 14px;
+  text-align: center;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: all 0.2s ease;
+}
+
+.day:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+}
+
+.day.done {
+  background: var(--done);
+  color: white;
+}
+
+/* ===== MODAL ===== */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal-content {
+  background: var(--card);
+  color: var(--text);
+  padding: 24px;
+  width: 90%;
+  max-width: 420px;
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  animation: popup 0.25s ease;
+}
+
+@keyframes popup {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+#closeModal {
+  float: right;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+#links a {
+  display: block;
+  margin: 6px 0;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+#links a:hover {
+  text-decoration: underline;
+}
+
+#doneBtn {
+  margin-top: 16px;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: var(--primary);
+  color: white;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#doneBtn:hover {
+  opacity: 0.9;
+}

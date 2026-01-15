@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>ICPC 84-Day Planner</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1e90ff">
+  <link rel="icon" href="icons/icon-192.png">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>📘 ICPC 84 Ngày</h1>
+  <div class="header-btns">
+    <button id="themeBtn">🌙</button>
+    <button id="notifyBtn">🔔</button>
+  </div>
+</header>
+
+<!-- PROGRESS -->
+<div class="progress-box">
+  <div id="progressText">0 / 84 ngày</div>
+  <div class="progress-bar">
+    <div id="progressFill"></div>
+  </div>
+</div>
+
+<!-- CALENDAR -->
+<div class="calendar" id="calendar"></div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <span id="closeModal">✖</span>
+    <h2 id="modalTitle"></h2>
+
+    <ul id="topicList"></ul>
+    <p id="practice"></p>
+    <div id="links"></div>
+
+    <button id="doneBtn">✅ Đã học xong</button>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
